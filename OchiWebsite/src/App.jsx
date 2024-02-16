@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './Components/Navbar';
 import LandingPage from './Components/LandingPage';
 import Marque from './Components/Marque';
-
+import About from './Components/About'
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
         <Navbar/>
         <LandingPage/>
         <Marque/>
+        <About/>
       </div>
     </div>
   );
