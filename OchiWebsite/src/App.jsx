@@ -3,6 +3,8 @@ import Navbar from './Components/Navbar';
 import LandingPage from './Components/LandingPage';
 import Marque from './Components/Marque';
 import About from './Components/About'
+import Eyes from './Components/Eyes';
+import Features from './Components/Features';
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
         <LandingPage/>
         <Marque/>
         <About/>
+        <Eyes/>
+        <Features/>
       </div>
     </div>
   );
