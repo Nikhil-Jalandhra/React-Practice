@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container, Logo, LogoOutButton} from '../index'
 import { Link } from 'react-router-dom';
-import { UseSelector, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 function Header() {
@@ -56,6 +56,11 @@ function Header() {
                 >{item.name}</button>
               </li>
             ) : null
+            )}
+            {authStatus && (
+              <li>
+                <LogoOutButton></LogoOutButton>
+              </li>
             )}
           </ul>
         </nav>
