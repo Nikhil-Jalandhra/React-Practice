@@ -5,6 +5,8 @@ export class AuthService {
     client = new Client();
     account;
 
+    
+    
     constructor () {
         this.client
         .setEndpoint(conf.appwriteUrl)
@@ -12,7 +14,8 @@ export class AuthService {
         this.account = new Account(this.client);
     }
 
-    async creatAccount({email, password, name}) {
+
+    async createAccount({email, password, name}) {
         try {
         const userAccout = await this.account.create(ID.unique(), email, password, name)
         if (userAccout) {
@@ -29,6 +32,7 @@ export class AuthService {
             try {
             return await this.account.createEmailSession(email, password);
             } catch (error) {
+                console.log(error)
                 throw error;
             }
             

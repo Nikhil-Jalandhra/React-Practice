@@ -16,10 +16,11 @@ function Login() {
         setError("")
         try {
             const session = await authService.login(data)
-            if (session){
+            if (session) {
                 const userData = await authService.getCurrentUser()
-                if(userData)dispatch(authLogin(userData));
-                navigate("/") 
+                console.log(userData)
+                if(userData) dispatch(authLogin(userData));
+                navigate("/")
             }
         } catch (error) {
             setError(error.message)
@@ -54,7 +55,7 @@ function Login() {
                 label ="Email: "
                 placeholder="Enter your email"
                 type="email"
-                {...register("emali", {
+                {...register("email", {
                     required: true,
                     validate: {
                         matchPattern: (value) => /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/gi.test(value) ||

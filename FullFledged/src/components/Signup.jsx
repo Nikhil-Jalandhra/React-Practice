@@ -13,11 +13,11 @@ function Signup() {
     const dispatch = useDispatch()
     const {register, handleSubmit} = useForm()
 
-    const create = async(data) => {
+     const create = async(data) => {
         setError("")
         try {
-            const userData = await authService.creatAccount(data)
-            if (userData){
+            const userData = await authService.createAccount(data)
+            if (userData) {
                 const userData = await authService.getCurrentUser()
                 if(userData) dispatch(login(userData));
                 navigate("/")
@@ -57,13 +57,13 @@ function Signup() {
                         })}
                         />
                         <Input
-                        label ="Email: "
+                        label="Email: "
                         placeholder="Enter your email"
                         type="email"
-                        {...register("emali", {
+                        {...register("email", {
                             required: true,
                             validate: {
-                                 matchPattern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                                 matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
                                 "Email address must be a valid address",
                                 }
                         })} />
