@@ -23,10 +23,10 @@ function App() {
   }
 
   useEffect(() => {
-   const todo = JSON.parse(localStorage.getItem("todos")) 
+   const todos = JSON.parse(localStorage.getItem("todos")) 
 
    if(todos && todos.length > 0) {
-    setTodos(todo)
+    setTodos(todos)
    }
 
   }, []);
