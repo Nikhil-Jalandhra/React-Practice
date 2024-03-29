@@ -137,22 +137,22 @@ function Question() {
   return (
     <div className='w-full pb-[100px] flex flex-col items-center bg-[#3d3b3c]'>
 
-        <div className='w-[310px] flex flex-col items-center mt-[30px] rounded-2xl bg-[#c1bdb3]'>
-            <img className='w-[200px]' src={logo} alt="" />
-            <h1 className={`${showResult} text-[20px]`}>{scoreJudge}</h1>
-            <h1 id='score' className={`${showResult} text-[21px] mb-4`}>Your Score is = <span className=' font-extrabold'>{totalScore}</span>/{Questions.length}</h1>
+        <div className='w-[310px] lg:w-[700px] flex flex-col items-center mt-[30px] rounded-2xl bg-[#c1bdb3]'>
+            <img className='w-[200px] lg:w-[250px]' src={logo} alt="" />
+            <h1 className={`${showResult} text-[20px] lg:text-[30px]`}>{scoreJudge}</h1>
+            <h1 id='score' className={`${showResult} text-[21px] lg:text-[31px] mb-4`}>Your Score is = <span className=' font-extrabold'>{totalScore}</span>/{Questions.length}</h1>
         </div>
 
         <form id='quiz' onSubmit={handleFormSubmit}>
             {Questions.map((ques, index)=>(
-                <div key={index} className='w-[310px] bg-[#c1bdb3] mt-2 rounded-xl p-4'>
-                    <h1 className='mb-4'>{index+1}. {ques.question}</h1>
+                <div key={index} className='w-[310px] lg:w-[700px] lg:p-8 bg-[#c1bdb3] mt-2 rounded-xl p-4'>
+                    <h1 className='mb-4 lg:text-[26px]'>{index+1}. {ques.question}</h1>
                         {ques.answers.map((answer, ansIndex)=>(
                             <label key={ansIndex} htmlFor={answer.text} >
-                                <div className='flex mb-2' id={`${answer.correct}`}>
+                                <div className='flex mb-2 lg:text-[25px]' id={`${answer.correct}`}>
                                     <input
                                     type="radio"
-                                    className=' me-2'
+                                    className=' me-2 w-[20px] lg:w-[25px]'
                                     name={ques.question}
                                     value={answer.correct}
                                     onChange={perSelected}
@@ -164,8 +164,8 @@ function Question() {
             </div>
             ))} 
 
-            <div className={`w-[310px] bg-[#c1bdb3] rounded-xl mt-2 flex ${buttonFunction}  p-5 justify-center` }>
-                <button type='submit' className='bg-white px-3 text-[20px] font-bold rounded-xl'>Submit
+            <div className={`w-[310px] lg:w-[700px] bg-[#c1bdb3] rounded-xl mt-2 flex ${buttonFunction}  p-5 lg:p-8 justify-center` }>
+                <button type='submit' className='bg-white px-3 lg:px-6 text-[20px] lg:text-[30px] font-bold rounded-xl'>Submit
                 </button>
             </div>
 
