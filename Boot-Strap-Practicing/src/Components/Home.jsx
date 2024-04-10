@@ -14,7 +14,11 @@ function Home() {
   return (
     <>
         <div className='w-full h-screen bg-black flex flex-col items-center pt-[40px]'>
-            <div className='w-[850px] h-[450px] bg-gray-700 rounded-xl overflow-hidden'>
+            <motion.div
+            initial={{scale: 0}}
+            animate={{scale: 1}}
+            transition={{duration: 1.5, delay: 1.5}}
+            className='w-[850px] h-[450px] bg-gray-700 rounded-xl overflow-hidden'>
                 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="1500">
@@ -42,19 +46,11 @@ function Home() {
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-            </div>
+            </motion.div>
             <motion.div
-            initial={{
-                y: "10px"
-            }}
-            animate={{
-                y: "0px"
-            }}
-            transition={{
-                duration: 1,
-                repeat: Infinity,
-                ease: "easeInOut"
-            }}
+            initial={{ y: "10px" }}
+            animate={{ y: "0px" }}
+            transition={{duration: 1, repeat: Infinity, ease: "easeInOut" }}
             className=' text-gray-400 flex items-center mt-3 '>
                 <h1>Scroll Down</h1>
                 <IoCaretDownCircle className='ml-1 text-white text-[20px]' />
