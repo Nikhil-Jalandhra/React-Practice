@@ -1,5 +1,5 @@
-
-
+import { Client, Account, ID } from "appwrite";
+import conf from "../envImport/conf"
 
 class AuthService{
     client = new Client()
