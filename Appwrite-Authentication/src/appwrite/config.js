@@ -1,4 +1,4 @@
-import { Client, Id, Databases, Storage, Query } from "appwrite";
+import { Client, ID, Databases, Storage, Query, ID } from "appwrite";
 import conf from "../envImport/conf"
 
 export class Service{
@@ -89,6 +89,37 @@ export class Service{
             throw(error)
         }
     }
+
+    async uploadFile(file){
+        try {
+            await this.bucket.createFile(
+                conf.appwriteBucketId,
+                ID.unique(),
+                file
+            )
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    async deleteFile(fileId){
+        try {
+            await this.bucket.deleteFile(
+                conf.appwriteBucketId,
+                fileId
+            )
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    getFilePreview(fileId){
+        return this.bucket.getFilePreview(
+            conf.appwriteBucketId,
+            fileId
+        )
+    }
+
 }
 
 const service = new Service()
