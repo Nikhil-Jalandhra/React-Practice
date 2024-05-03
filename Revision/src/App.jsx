@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-     <h1>Nikhil</h1>
+     <h1>Learing last of React</h1>
     </>
   )
 }
