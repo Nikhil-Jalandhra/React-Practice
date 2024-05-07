@@ -1,10 +1,13 @@
 
+import Header from "./Components/Header"
 
 function App() {
 
   return (
     <>
-      <div>HelloWorld!</div>
+      <div className="w-full h-screen bg-cyan-800">
+        <Header/>
+      </div>
     </>
   )
 }
