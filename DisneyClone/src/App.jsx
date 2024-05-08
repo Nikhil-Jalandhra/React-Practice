@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <div className="w-full h-screen bg-cyan-800">
+      <div className="w-full h-screen bg-[#16181f]">
         <Header/>
       </div>
     </>
