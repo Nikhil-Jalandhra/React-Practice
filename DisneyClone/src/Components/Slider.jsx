@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useRef} from 'react';
 import banner1 from "../Images/banner1.jpg"
 import banner2 from "../Images/banner2.jpg"
 import banner3 from "../Images/banner3.jpg"
@@ -6,6 +6,7 @@ import banner4 from "../Images/banner4.jpg"
 import banner5 from "../Images/banner5.jpg"
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
+const screenWidth = window.innerWidth
 
 function Slider() {
 
@@ -17,12 +18,25 @@ function Slider() {
         banner5
     ]
 
+    const elementRef = useRef();
+
+    const rightSlide = (element) =>{
+      element.scrollLeft+=screenWidth-108
+    }
+    
+    const leftSlide = (element) =>{
+      element.scrollLeft-=screenWidth
+    }
+
   return (
     <div>
-      <div className='flex w-full overflow-x-auto px-16 py-4'>
-        <div className='text-[50px] absolute' ><IoIosArrowBack/></div>
+        <div className=' hidden md:block text-[50px] mx-[80px] absolute mt-[220px]' 
+        onClick={()=>leftSlide(elementRef.current)} ><IoIosArrowBack/></div>
+        <div className=' hidden md:block text-[50px] mx-[80px] absolute mt-[220px] right-0' 
+        onClick={()=>rightSlide(elementRef.current)} ><IoIosArrowForward/></div>
+      <div className='flex w-full overflow-x-auto px-[64px] py-4 scrollbar-hide scroll-smooth' ref={elementRef}>
         {banner.map((item,index)=> (
-            <div key={index} className=' min-w-full h-[500px] mr-[20px]'>
+            <div key={index} className=' min-w-full lg:h-[400px] md:h-[300px] mr-[20px]'>
                 <img src={item} alt="item" className='w-full h-full object-fill object-left-top rounded-lg' />
             </div>
         ))}

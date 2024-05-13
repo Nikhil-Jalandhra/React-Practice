@@ -46,8 +46,6 @@ function Header() {
 
     const [show, setShow] = useState(false);
 
-    console.log(show)
-
     const menuebox = () => {
         setShow(!show)
 
