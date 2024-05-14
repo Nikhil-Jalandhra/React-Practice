@@ -52,7 +52,7 @@ function Header() {
     }
 
   return (
-    <div className=' flex w-full h-[100px] text-white'>
+    <div className=' flex w-full h-[80px] text-white'>
         <div className='h-full w-[250px] flex items-center pl-[40px] mr-[25px]'>
             <img src={logo} alt="Logo" className='w-[70px]' />
         </div>

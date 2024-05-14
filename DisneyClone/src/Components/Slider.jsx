@@ -36,7 +36,7 @@ function Slider() {
         onClick={()=>rightSlide(elementRef.current)} ><IoIosArrowForward/></div>
       <div className='flex w-full overflow-x-auto px-[50px] py-4 scrollbar-hide scroll-smooth' ref={elementRef}>
         {banner.map((item,index)=> (
-            <div key={index} className=' min-w-full lg:h-[400px] md:h-[300px] mr-[20px]'>
+            <div key={index} className=' shadow-xl shadow-black rounded-lg min-w-full lg:h-[400px] md:h-[300px] mr-[20px]'>
                 <img src={item} alt="item" className='w-full h-full object-fill object-left-top rounded-lg' />
             </div>
         ))}

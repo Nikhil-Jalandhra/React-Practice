@@ -1,13 +1,15 @@
 import Header from "./Components/Header"
 import Slider from "./Components/Slider"
+import ProductionSection from "./Components/ProductionSection"
 
 function App() {
 
   return (
     <>
-      <div className="h-full pb-[200px] bg-[#131520] text-white">
+      <div className=" h-screen bg-[#131520] text-white">
         <Header/>
         <Slider/>
+        <ProductionSection/>
       </div>
     </>
   )
