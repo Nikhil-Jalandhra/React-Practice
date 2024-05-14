@@ -63,7 +63,7 @@ function Header() {
             {menue.map((item,index)=>(
                 <a key={index} href={item.slug}>
                     <p className='flex items-center
-                       font-semibold text-[18px] cursor-pointer border-[#16181f]
+                       font-semibold text-[18px] cursor-pointer border-[#131520]
                        border-b-[2px] hover:border-white mr-[20px]'>
                         <span className='mr-[5px] text-16px]'>{item.icon}</span>{item.name}
                     </p>
@@ -104,7 +104,7 @@ function Header() {
                 {menue.map((item,index)=>(
                     <a key={index} href={item.slug}>
                         <p className='flex items-center
-                          font-semibold text-[18px] cursor-pointer border-[#16181f]
+                          font-semibold text-[18px] cursor-pointer border-[##131520]
                           border-b-[2px] hover:border-white mr-[20px]'>
                           <span className='mr-[5px] text-16px]'>{item.icon}</span>{item.name}
                         </p>

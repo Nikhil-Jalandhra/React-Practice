@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <div className="h-full pb-[100px] bg-[#16181f] text-white">
+      <div className="h-full pb-[200px] bg-[#131520] text-white">
         <Header/>
         <Slider/>
       </div>
