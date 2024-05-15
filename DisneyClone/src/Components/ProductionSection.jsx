@@ -41,14 +41,15 @@ function ProductionSection() {
     ]
     
   return (
-    <div className='flex py-[20px] gap-2 md:gap-5 px-[50px]'>
+    <div className='flex py-[20px] gap-2 md:gap-5 md:px-[50px] px-[20px]'>
       {productionItem.map((item)=>(
-      <div key={item.id} className=' border-gray-700 border-[3px] bg-gradient-to-t from-[#131520] to-[#232232]
+      <div key={item.id} className=' border-gray-700 md:border-[3px] border-[2px]
+       bg-gradient-to-t from-[#131520] to-[#232232] overflow-hidden
        rounded-lg shadow-xl shadow-black hover:scale-110 hover:bg-none
        transition-all duration-300 ease-in-out cursor-pointer relative'>
            <img src={item.image} alt="" className='absolute top-0' />
             <video src={item.video} muted autoPlay loop playsInline  
-            className='opacity-0 hover:opacity-100 rounded-lg' 
+            className='opacity-0 hover:opacity-100' 
             ></video>
       </div>
       ))}
