@@ -16,16 +16,12 @@ export class AuthService {
 
 
     async createAccount({email, password, name}) {
-        try {
         const userAccout = await this.account.create(ID.unique(), email, password, name)
         if (userAccout) {
             return this.login({email, password});
         }else{
             return userAccout;
          }
-            } catch (error) {
-            throw error;
-            }
         }
         
         async login({email, password}) {
